@@ -1,8 +1,10 @@
 package com.test_project;
 
 import java.awt.*;
+import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
 
@@ -96,6 +98,26 @@ public class Main {
         int result9 = (int)Math.round(Math.random() * 100);
         System.out.println(result9);
 
+
+        //Formatting
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        String res = currency.format(1234567.891);
+        System.out.println(res);
+
+        NumberFormat percentage = NumberFormat.getPercentInstance();
+        String res1 = percentage.format(0.11);
+        System.out.println(res1);
+        //Other way
+        String res2 = NumberFormat.getPercentInstance().format(0.04);
+        System.out.println(res2);
+
+
+        //Reading input
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your age : ");        byte age = scanner.nextByte();
+        System.out.println("You are "+ age + "yrs old.");
+        System.out.print("Enter your name : ");       String name = scanner.next();
+        System.out.println("You are "+ name);
 
 
 
