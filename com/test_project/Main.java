@@ -29,6 +29,16 @@ public class Main {
         System.out.println(pt2);
 
 
+        // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+        //Immutable example
+        String message = "Hello World" + "!!";
+        System.out.println(message.replace("!", "*"));
+        System.out.println(message.toUpperCase());
+        System.out.println(message);             // Means any method that modifies a string, will return a new copy of that string
+                                                 // making the original version immutable i.e. non-changeable
+
 
 
         //SHORTCUT KEY -> sout + Tab = System.out.println();
