@@ -62,6 +62,42 @@ public class Main {
         int[][] numbers_mulArr1 = { {1,2,3}, {4,5,6}  };
         System.out.println(Arrays.deepToString(numbers_mulArr1));
 
+        //Arithmetic
+        int x= 1;
+        int y = x++;
+        System.out.println(x);  // 2
+        System.out.println(y);  // 1
+
+
+        //Implicit casting
+        //byte > short > int > long > float > double
+        short a = 1;
+        int b = 2;
+        System.out.println(a+b); // 3
+        double c = 1.1;
+        int d = (int)c + 3;
+        System.out.println(d);  // 4
+
+        String v = "3";   System.out.println("v : " +Integer.parseInt(v));
+        String z = "3.5"; System.out.println("z : " +Float.parseFloat(z));
+
+        //Math
+        int result1 = Math.round(5.24F);        System.out.println(result1);
+        int result2 = (int)Math.round(4.9);     System.out.println(result2);
+        int result3 = (int)Math.ceil(7.11);     System.out.println(result3);
+        int result4 = (int)Math.floor(0.89);    System.out.println(result4);
+        int result5 = Math.min(7, 4);           System.out.println(result5);
+        int result6 = Math.max(9,3);            System.out.println(result6);
+        double result7 = Math.random() * 100;   System.out.println(result7);
+
+        double result8 = Math.round(Math.random() * 100);
+        System.out.println(result8);
+
+        int result9 = (int)Math.round(Math.random() * 100);
+        System.out.println(result9);
+
+
+
 
 
         //SHORTCUT KEY -> sout + Tab = System.out.println();
