@@ -1,5 +1,6 @@
 package com.test_project;
 
+import java.awt.*;
 import java.util.Date;
 
 public class Main {
@@ -21,7 +22,16 @@ public class Main {
         System.out.println(currTime);
         System.out.println(now);
 
+        Point pt1 = new Point(1, 1);
+        Point pt2 = pt1;
+        pt1.x = 2;
+        System.out.println(pt1);
+        System.out.println(pt2);
+
+
+
 
         //SHORTCUT KEY -> sout + Tab = System.out.println();
+        //When importing a class, use "option + enter" key in Mac
     }
 }
