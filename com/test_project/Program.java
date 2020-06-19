@@ -11,13 +11,25 @@ public class Program {
         float annualInterest = (float)readNumber("Annual Interest Rate", 1, 30);
         byte years = (byte)readNumber("Period (years)",1, 30);
 
+        printMortgage(principal, annualInterest, years);
+        printPaymentSchedule(principal, annualInterest, years);
+
+        // OPEN Terminal
+        // cd till 'test_project' , type "javac Program.java"
+        // type "cd .." (till 'src' folder)
+        // type "java com.test_project.Program"
+    }
+
+    private static void printMortgage(int principal, float annualInterest, byte years) {
         double mortgage = CalculateMortgage(principal, annualInterest, years);
         String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println();
         System.out.println("MORTGAGE");
         System.out.println("---------");
         System.out.println("Monthly Payments :" + mortgageFormatted);
+    }
 
+    private static void printPaymentSchedule(int principal, float annualInterest, byte years) {
         System.out.println();
         System.out.println("PAYMENT SCHEDULE");
         System.out.println("-----------------");
@@ -25,11 +37,6 @@ public class Program {
             double balance = calculateBalance(principal,annualInterest,years,month);
             System.out.println(NumberFormat.getCurrencyInstance().format(balance));
         }
-
-        // OPEN Terminal
-        // cd till 'test_project' , type "javac Program.java"
-        // type "cd .." (till 'src' folder)
-        // type "java com.test_project.Program"
     }
 
     public static double readNumber(String prompt, double min, double max) {
