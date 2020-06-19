@@ -10,36 +10,9 @@ public class Program {
         byte years = 0;
         float annualInterest = 0.0F;
 
-        Scanner scanner = new Scanner(System.in);
-
-        while(true) {
-            System.out.print("Principal : ");
-            principal = scanner.nextInt();
-
-            if(principal >= 1000 && principal <= 1_000_000)
-                break;
-            System.out.println("Enter a value between 1000 & 1_000_000");
-        }
-
-        while(true){
-            System.out.print("Annual Interest Rate : ");
-            annualInterest = scanner.nextFloat();
-
-            if(annualInterest >=1 && annualInterest <=30)
-                break;
-
-            System.out.println("Enter a value between 1 and 30");
-        }
-
-        while(true){
-            System.out.print("Period (Years) : ");
-            years = scanner.nextByte();
-
-            if(years >=1 && years <= 30)
-                break;
-
-            System.out.println("Enter a value between 1 and 30");
-        }
+        principal = (int)readNumber("Principal", 1000, 1_000_000);
+        annualInterest = (float)readNumber("Annual Interest Rate", 1, 30);
+        years = (byte)readNumber("Period (years)",1, 30);
 
         double mortgage = CalculateMortgage(principal, annualInterest, years);
 
@@ -51,6 +24,23 @@ public class Program {
         // cd till 'test_project' , type "javac Program.java"
         // type "cd .." (till 'src' folder)
         // type "java com.test_project.Program"
+    }
+
+    public static double readNumber(String prompt, double min, double max)
+    {
+        Scanner scanner = new Scanner(System.in);
+        double value;
+
+        while(true){
+            System.out.print(prompt + ": ");
+            value = scanner.nextFloat();
+
+            if(value >= min && value <= max)
+                break;
+
+            System.out.println("Enter a value between " + min + " and " + max);
+        }
+        return value;
     }
 
 
